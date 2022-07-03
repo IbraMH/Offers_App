@@ -1,0 +1,20 @@
+import 'dart:ui';
+const BGroundSplash = Color(0xFFFCFCFC);
+const TitleTextSplash = Color(0xFF1E1401);
+const TitleTextLogin = Color(0xFFFEBA30);
+const kBGBtn2= Color(0xFFff7300);
+const kUnSelectTabColor = Color(0xFFC4C4C4);
+const kBackGroundApp = Color(0xffF5f7fa);
+const kBackGroundIconMenuUnSelected = Color(0xff424242);
+const kBackGroundToyFaces = Color(0xffAEE5D1);
+const kTextGray = Color(0xffCBCBCB);
+const kTitleListView = Color(0xff939393);
+const kBorderContainerHome = Color(0xffE4E4E4);
+const kContainerFavorite = Color(0xffF2F2F2);
+const kNameProfile = Color(0xffAEAEAE);
+const kIconTimeOffers = Color(0xff23B63B);
+const kTextSavingValue = Color(0xff999999);
+const kTextOffersValue = Color(0xff7A7A7A);
+const kContainerBottomSheet = Color(0xff707070);
+const kTextDetailsQuestion = Color(0xff424242);
+

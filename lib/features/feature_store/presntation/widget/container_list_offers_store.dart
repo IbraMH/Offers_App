@@ -1,0 +1,128 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:offers_app/core/app_colors.dart';
+import 'package:offers_app/features/feature_main/presntation/widget/container_favorite_offers.dart';
+import 'package:offers_app/features/feature_store/presntation/widget/container_plus.dart';
+import 'package:offers_app/widget/custome_text.dart';
+
+class ContainerListOffersStore extends StatelessWidget {
+  String image;
+  String title;
+  double lastPrice;
+  double offersPrice;
+  String details;
+  int numProduct;
+
+  ContainerListOffersStore({
+    required this.image,
+    required this.title,
+    required this.lastPrice,
+    required this.offersPrice,
+    required this.details,
+    this.numProduct = 1,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 120.h,
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15.r),
+                child: Image.asset(
+                  image,
+                  width: 120.w,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(height: 5.h),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          CustomeText(
+                            title: title,
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          Spacer(),
+                          SvgPicture.asset('assets/svg/heart1.svg',width: 15.w,height: 15.h,),
+                          SizedBox(width: 15.w),
+                          SvgPicture.asset('assets/svg/share.svg',width: 15.w,height: 15.h,),
+                        ],
+                      ),
+                      Spacer(),
+                      CustomeText(
+                        title: details,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w300,
+                        color: kTitleListView,
+                        overflow: 1,
+                        maxLines: 2,
+                      ),
+                      Spacer(),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          CustomeText(
+                            title: ' ر.س${lastPrice}',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: TitleTextLogin,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                          SizedBox(width: 5.w),
+                          CustomeText(
+                            title: ' ر.س${offersPrice}',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: kBackGroundIconMenuUnSelected,
+                          ),
+                          Spacer(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ContainerPlus(image: 'assets/svg/plus.svg'),
+                              SizedBox(width: 15.w),
+                              CustomeText(
+                                title: numProduct.toString(),
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                                color: kBackGroundIconMenuUnSelected,
+                              ),
+                              SizedBox(width: 15.w),
+                              ContainerPlus(image: 'assets/svg/mains.svg'),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10.h),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Divider(
+          thickness: 0.5,
+          height: 20.h,
+        ),
+      ],
+    );
+  }
+}
+
+
+
+
